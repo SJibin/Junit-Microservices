@@ -31,6 +31,15 @@ public class ProductsController {
 
 	@Autowired
 	ProductsService productsService;
+	
+	public ProductsService getProductsService() {
+		return productsService;
+	}
+
+	public void setProductsService(ProductsService productsService) {
+		this.productsService = productsService;
+	}
+
 
 	@RequestMapping(value="/add",method = RequestMethod.POST)
 	@ApiOperation(value="Adding Products")
@@ -52,6 +61,7 @@ public class ProductsController {
 		return productsService.getAllProducts();
 	}
 
+	
 	@RequestMapping(value="/update",method = RequestMethod.PUT)
 	@ApiOperation(value="Updating Product")
 	public Products updateProducts(@RequestBody Products products) {
