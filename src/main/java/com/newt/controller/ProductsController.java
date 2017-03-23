@@ -32,12 +32,12 @@ public class ProductsController {
 	@Autowired
 	ProductsService productsService;
 	
-	public ProductsService getProductsService() {
+	/*public ProductsService getProductsService() {
 		return productsService;
-	}
+	}*/
 
 	public void setProductsService(ProductsService productsService) {
-		this.productsService = productsService;
+				this.productsService = productsService;
 	}
 
 
@@ -54,7 +54,7 @@ public class ProductsController {
 		return productsService.getProductsByProductId(productId);
 	}
 
-	@RequestMapping(value="/allProducts",method = RequestMethod.GET,produces={"application/xml","application/json"})
+	@RequestMapping(value="/allProducts",method = RequestMethod.GET,produces={"application/json"})
 	@ApiOperation(value="Getting All Products")
 	@Produces({"application/json", "application/xml"})
 	public List<Products> getAllProducts() {

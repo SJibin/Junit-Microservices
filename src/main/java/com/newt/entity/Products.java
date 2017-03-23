@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "PRODUCTS")
 public class Products {
 	@Id
-	@GeneratedValue
+	//@GeneratedValue
 	@XmlElement
 	private int productId;
 	@XmlElement
@@ -71,10 +71,5 @@ public class Products {
 		this.totalInStock = totalInStock;
 	}
 
-	@Override
-	public String toString() {
-		return "Products [productId=" + productId + ", productName=" + productName + ", price=" + price
-				+ ", totalInStock=" + totalInStock + "]";
-	}
-
+	
 }
